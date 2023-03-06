@@ -1,0 +1,12 @@
+@mixin color-blue {
+  color: blue;
+}
+
+p {
+  font-weight: bold;
+  font-style: italic;
+}
+
+h1 {
+  @include color-blue();
+}
