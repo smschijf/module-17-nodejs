@@ -1,0 +1,18 @@
+@use "../abstracts" as *;
+
+nav {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5rem;
+  width: 100%;
+  background-color: $darkGray;
+  border-radius: 1.3rem 1.3rem 0 0;
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    padding-top: 30px;
+    list-style: none;
+  }
+}

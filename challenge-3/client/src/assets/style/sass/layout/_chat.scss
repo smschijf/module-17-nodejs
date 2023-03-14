@@ -1,0 +1,40 @@
+@use "../abstracts" as *;
+
+.chatContainer {
+  overflow-y: hidden;
+  color: white;
+  height: 70%;
+  padding: 10px;
+  .message {
+    display: grid;
+    row-gap: 0.5rem;
+    padding: 1rem;
+    background-color: $lightGray;
+    margin-bottom: 1rem;
+    width: 80%;
+    .messageUser {
+      display: flex;
+      .statusIcon {
+        margin-right: 10px;
+      }
+    }
+    .messageContent {
+      font-size: 0.75rem;
+    }
+    .messageMeta {
+      font-size: 0.75rem;
+      color: $lighterGray;
+    }
+  }
+  #other {
+    border-radius: 1.5rem 1.5rem 1.5rem 0;
+  }
+  #you {
+    border-radius: 1.5rem 1.5rem 0 1.5rem;
+    background-color: $blue;
+    float: right;
+    .messageMeta {
+      color: #fff;
+    }
+  }
+}

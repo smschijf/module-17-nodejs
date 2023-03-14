@@ -1,0 +1,36 @@
+@use "../abstracts" as *;
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+  height: 5rem;
+  width: 100%;
+  color: #fff;
+  background-color: $darkGray;
+  border-radius:  0 0 1.3rem 1.3rem;
+  h1 {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  p {
+    font-size: 0.75rem;
+  }
+  button {
+    border: none;
+    background: none;
+    position: absolute;
+    right: 1.5rem;
+    img {
+      height: 1rem;
+    }
+  }
+  button:nth-of-type(2) {
+    left: 1.5rem;
+    right: 0;
+    width: 0.6rem;
+  }
+}

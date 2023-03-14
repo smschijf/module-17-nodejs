@@ -1,0 +1,22 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+#root {
+  background-color: $gray;
+}
+
+.App {
+  position: relative;
+  background-color: $gray;
+  height: 100vh;
+  max-width: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+}

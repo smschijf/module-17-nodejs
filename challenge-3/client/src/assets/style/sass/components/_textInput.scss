@@ -1,0 +1,28 @@
+@use "../abstracts" as *;
+
+.textInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 337px;
+  margin: 0 auto;
+  input {
+    border: none;
+    background-color: $lightGray;
+    border-radius: 2rem;
+    color: #fff;
+    width: 100%;
+    padding: 1rem 1rem;
+  }
+  input::placeholder {
+    color: $lighterGray;
+  }
+  button {
+    position: absolute;
+    border: none;
+    background-color: $lightGray;
+    right: 0.5rem;
+  }
+}

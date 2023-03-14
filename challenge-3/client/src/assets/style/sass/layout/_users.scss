@@ -1,0 +1,17 @@
+@use "../abstracts" as *;
+
+.userList {
+  display: grid;
+  padding: 1rem;
+  .user {
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr;
+    .userName {
+      color: #fff;
+    }
+    .chatroom {
+      color: $lighterGray;
+      text-align: end;
+    }
+  }
+}

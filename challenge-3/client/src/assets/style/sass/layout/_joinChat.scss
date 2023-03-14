@@ -1,0 +1,30 @@
+@use "../abstracts" as *;
+@use "../components/header";
+@use "../components/nav";
+@use "../components/textInput";
+@use "../components/menu";
+
+.enterChatbox {
+  .textInput {
+    margin: 50px auto;
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    border: none;
+    background-color: $blue;
+    border-radius: 2rem;
+    color: #fff;
+    width: 90%;
+    max-width: 337px;
+    padding: 1rem 1rem;
+    font-weight: bold;
+  }
+  .chatInformation {
+    margin: 1rem auto;
+    color: $lighterGray;
+    max-width: 285px;
+    text-align: center;
+  }
+}

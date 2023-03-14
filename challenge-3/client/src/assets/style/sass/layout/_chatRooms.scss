@@ -1,0 +1,19 @@
+@use "../abstracts" as *;
+
+.chatrooms {
+  li {
+    display: grid;
+    grid-template: 1fr 1fr / auto 25px 25px;
+    margin: 36px 28px;
+    .chatroomTitle {
+      color: #fff;
+    }
+    .userCount {
+      color: $lighterGray;
+    }
+    .chatroomDescription {
+      color: $lighterGray;
+      font-size: 0.75rem;
+    }
+  }
+}
