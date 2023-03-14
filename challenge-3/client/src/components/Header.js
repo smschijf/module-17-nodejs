@@ -1,5 +1,5 @@
 import hamburger from "../assets/icons/hamburger-icon.svg";
-import back from "../assets/icons/back-btn.svg";
+// import back from "../assets/icons/back-btn.svg";
 import { useState } from "react";
 import rooms from "../assets/icons/messages-icon-white.svg";
 import users from "../assets/icons/users-icon-white.svg";
@@ -7,13 +7,6 @@ import signOut from "../assets/icons/sign-out-icon-white.svg";
 
 const Header = (props) => {
   const [toggle, setToggle] = useState(false);
-  if (props.backBtn) {
-    return (
-      <button>
-          <img src={back} alt="go back" />
-      </button>
-    );
-  }
 
   return (
     <>
@@ -23,9 +16,6 @@ const Header = (props) => {
         <button id="toggleMenu" onClick={() => setToggle(!toggle)}>
           <img src={hamburger} alt="open menu" />
         </button>
-        <button>
-          <img src={back} alt="go back" />
-      </button>
       </header>
       {/* <Menu /> */}
       <div className={`menu ${toggle ? "showMenu" : ""}`}>

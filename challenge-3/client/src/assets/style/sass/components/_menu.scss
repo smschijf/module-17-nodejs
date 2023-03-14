@@ -5,6 +5,7 @@
   width: 100%;
   transform: translateY(-150%);
   transition: transform 0.2s;
+  z-index: 2;
   .menuRow {
     display: flex;
     padding: 1rem 1.5rem;
