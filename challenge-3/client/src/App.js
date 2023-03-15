@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       {!showChat ? (
         <>
-          <Header title="Enter chatbox" subtitle="Test" />
+          <Header title="Enter chatbox" setShowChat={setShowChat} />
           <div className="enterChatbox">
             <div className="textInput">
             <input
@@ -58,7 +58,7 @@ function App() {
           <Nav />
         </>
       ) : (
-        <Chat socket={socket} username={username} room={room} />
+        <Chat socket={socket} username={username} room={room} setShowChat={setShowChat} />
       )}
     </div>
   );

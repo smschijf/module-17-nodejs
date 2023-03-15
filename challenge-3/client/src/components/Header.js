@@ -1,5 +1,4 @@
 import hamburger from "../assets/icons/hamburger-icon.svg";
-// import back from "../assets/icons/back-btn.svg";
 import { useState } from "react";
 import rooms from "../assets/icons/messages-icon-white.svg";
 import users from "../assets/icons/users-icon-white.svg";
@@ -27,7 +26,7 @@ const Header = (props) => {
           <p>USERS</p>
           <img src={users} alt="rooms"></img>
         </div>
-        <div className="menuRow">
+        <div className="menuRow" onClick={() => props.setShowChat(false)}>
           <p>QUIT</p>
           <img src={signOut} alt="rooms"></img>
         </div>

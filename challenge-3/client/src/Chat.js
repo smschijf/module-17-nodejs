@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import ScrollToBottom from "react-scroll-to-bottom";
 
-const Chat = ({ socket, username, room }) => {
+const Chat = ({ socket, username, room, setShowChat }) => {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
 
@@ -33,7 +33,7 @@ const Chat = ({ socket, username, room }) => {
 
   return (
     <div className="App">
-      <Header title="Lorem Ipsum" subTitle="Description" />
+      <Header title={messageList.room} subTitle="Description" setShowChat={setShowChat} />
       {/* <div className="chatContainer"> */}
         <ScrollToBottom className="chatContainer">
         {messageList.map((messageContent, i) => {
@@ -45,14 +45,13 @@ const Chat = ({ socket, username, room }) => {
             >
               <div className="messageUser">
                 <span className="statusIcon">🟢</span>
-                <p className="username">username</p>
+                <p className="username">{messageContent.author}</p>
               </div>
               <div className="messageContent">
                 <p>{messageContent.message}</p>
               </div>
               <div className="messageMeta">
                 <p>{messageContent.time}</p>
-                <p>{messageContent.author}</p>
               </div>
             </div>
           );
