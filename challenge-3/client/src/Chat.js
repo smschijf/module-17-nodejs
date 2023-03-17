@@ -25,17 +25,20 @@ const Chat = ({ socket, username, room, setShowChat }) => {
   };
 
   useEffect(() => {
-    socket.on("receive_message", (data) => {
-      console.log(data);
-      setMessageList((list) => [...list, data]);
-    });
+      socket.on("receive_message", (data) => {
+        console.log(data);
+        setMessageList((list) => [...list, data]);
+      });
   }, [socket]);
 
   return (
     <div className="App">
-      <Header title={messageList.room} subTitle="Description" setShowChat={setShowChat} />
-      {/* <div className="chatContainer"> */}
-        <ScrollToBottom className="chatContainer">
+      <Header
+        title={room}
+        subTitle="Description"
+        setShowChat={setShowChat}
+      />
+      <ScrollToBottom className="chatContainer">
         {messageList.map((messageContent, i) => {
           return (
             <div
@@ -56,14 +59,13 @@ const Chat = ({ socket, username, room, setShowChat }) => {
             </div>
           );
         })}
-        </ScrollToBottom>
-        {/* <input
-          type="text"
-          placeholder="message"
-        />
-        <button onClick={sendMessage}>Send</button> */}
-      {/* </div> */}
-      <Nav textInput sendMessage={sendMessage} setCurrentMessage={setCurrentMessage} currentMessage={currentMessage} />
+      </ScrollToBottom>
+      <Nav
+        textInput
+        sendMessage={sendMessage}
+        setCurrentMessage={setCurrentMessage}
+        currentMessage={currentMessage}
+      />
     </div>
   );
 };

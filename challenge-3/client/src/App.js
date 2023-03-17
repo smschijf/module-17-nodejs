@@ -19,6 +19,8 @@ function App() {
     }
   };
 
+  // console.log(location.state.showChat);
+
   return (
     <div className="App">
       {!showChat ? (
@@ -43,7 +45,7 @@ function App() {
               }}
             />
             </div>
-            <button onClick={joinRoom}>
+            <button onClick={joinRoom} className="enterChatbox">
               <span>Enter Chatbox</span>
             </button>
             <div className="chatInformation">
