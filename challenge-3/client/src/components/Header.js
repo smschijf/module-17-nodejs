@@ -6,13 +6,9 @@ import users from "../assets/icons/users-icon-white.svg";
 import signOut from "../assets/icons/sign-out-icon-white.svg";
 import backBtn from "../assets/icons/back-btn.svg";
 
-const Header = (props, { setShowChat }) => {
+const Header = (props) => {
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
-
-  const backToChat = () => {
-    setShowChat(true);
-  };
 
   return (
     <>
@@ -27,7 +23,7 @@ const Header = (props, { setShowChat }) => {
         ) : (
           <button
             onClick={() => {
-              backToChat();
+              window.localStorage.setItem('showChat', true)
               navigate("/");
             }}
           >
@@ -48,7 +44,7 @@ const Header = (props, { setShowChat }) => {
           <p>USERS</p>
           <img src={users} alt="rooms"></img>
         </div>
-        <div className="menuRow" onClick={() => props.setShowChat(false)}>
+        <div className="menuRow" onClick={() => {window.localStorage.setItem('showChat', false); navigate("/")}}>
           <p>QUIT</p>
           <img src={signOut} alt="rooms"></img>
         </div>

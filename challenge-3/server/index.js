@@ -9,7 +9,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3002",
+    origin: "http://localhost:3000",
     methods: ["GET", "POST"],
   },
 });
@@ -34,11 +34,16 @@ io.on("connection", (socket) => {
     const rooms = [
       {
         "id": 1,
-        "name": "room from server"
+        "name": "room from server",
+        "userCount": 15
       },
+      {
+        "id": 2,
+        "name": "second room from server",
+        "userCount": 15
+      }
     ];
-    const rooms2 = [...rooms2, data];
-    res.send(rooms2);
+    res.send(rooms);
   })
 });
 

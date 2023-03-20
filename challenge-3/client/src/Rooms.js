@@ -6,14 +6,12 @@ import { useEffect, useState } from "react";
 
 const Rooms = () => {
   const location = useLocation();
-  const [rooms, setRooms] = useState();
-  const [showChat, setShowChat] = useState(false);
+  const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
     const fetchRooms = async () => {
       const res = await fetch("http://localhost:3001/rooms");
       const data = await res.json();
-      console.log(data);
       setRooms(data);
     };
 
@@ -30,9 +28,13 @@ const Rooms = () => {
           <img src={users} alt="users" />
           <p className="chatroomDescription">Description</p>
         </li>
-        {/* {rooms.map((room) => {
-          return <li key={room.id}>{room.name}</li>
-        })} */}
+        {rooms.map((room) => {
+          return <li key={room.id}>
+            <p className="chatroomTitle">{room.name}</p>
+            <span className="userCount">{room.userCount}</span>
+            <img src={users} alt="users" />
+          </li>
+        })}
       </ul>
       <Nav />
     </div>
