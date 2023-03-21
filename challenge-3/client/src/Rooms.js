@@ -1,11 +1,9 @@
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import users from "./assets/icons/users-icon.svg";
-import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const Rooms = () => {
-  const location = useLocation();
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
@@ -22,12 +20,6 @@ const Rooms = () => {
     <div className="App">
       <Header title="Chatrooms" subTitle="Choose a room!" showBackButton />
       <ul className="chatrooms">
-        <li>
-          <p className="chatroomTitle">{location.state.room}</p>
-          <span className="userCount">14</span>
-          <img src={users} alt="users" />
-          <p className="chatroomDescription">Description</p>
-        </li>
         {rooms.map((room) => {
           return <li key={room.id}>
             <p className="chatroomTitle">{room.name}</p>

@@ -14,12 +14,21 @@ const io = new Server(server, {
   },
 });
 
+let rooms = [];
 io.on("connection", (socket) => {
   // console.log(`User connected: ${socket.id}`);
 
   socket.on("join_room", (data) => {
     socket.join(data);
     console.log(`User with ID: ${socket.id} joined room: ${data}`);
+
+    const newRoom = {
+      id: rooms.length + 1,
+      name: data,
+      userCount: 1
+    }
+    rooms.push(newRoom);
+    console.log(rooms);
   });
 
   socket.on("send_message", (data) => {
@@ -28,21 +37,23 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", () => {
     console.log("User disconnected", socket.id);
+    rooms = [];
   });
 
   app.get('/rooms', (req, res) => {
-    const rooms = [
-      {
-        "id": 1,
-        "name": "room from server",
-        "userCount": 15
-      },
-      {
-        "id": 2,
-        "name": "second room from server",
-        "userCount": 15
-      }
-    ];
+    // const rooms = [
+    //   {
+    //     "id": 1,
+    //     "name": "room from server",
+    //     "userCount": 15
+    //   },
+    //   {
+    //     "id": 2,
+    //     "name": "second room from server",
+    //     "userCount": 15
+    //   }
+    // ];
+    console.log(rooms);
     res.send(rooms);
   })
 });
